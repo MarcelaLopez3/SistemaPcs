@@ -172,7 +172,7 @@ public class HomeListado extends javax.swing.JFrame {
         
         //Informacion con filtro
         Entradas entra = new Entradas();
-        ArrayList Listado = new BeanPC();
+       // ArrayList Listado = new BeanPC();
         ArrayList ListadoEquiposRecibe = entra.BuscarRegistroPC(ParametroBusqueda);
         Integer count = ListadoEquiposRecibe.size();
         System.out.println("The Length of ListadoEquiposRecibe-ArrayList is : " + count);
