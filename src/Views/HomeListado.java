@@ -6,6 +6,7 @@
 package Views;
 
 import Actions.Entradas;
+import Dao.BeanPC;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -171,6 +172,7 @@ public class HomeListado extends javax.swing.JFrame {
         
         //Informacion con filtro
         Entradas entra = new Entradas();
+        ArrayList Listado = new BeanPC();
         ArrayList ListadoEquiposRecibe = entra.BuscarRegistroPC(ParametroBusqueda);
         Integer count = ListadoEquiposRecibe.size();
         System.out.println("The Length of ListadoEquiposRecibe-ArrayList is : " + count);
@@ -178,7 +180,7 @@ public class HomeListado extends javax.swing.JFrame {
         String []fila = null;
 
         Integer i;
-        /*for (i = 0; i < count; i++) 
+        /*for ( i = 0; i < count; i++) 
         {
                 JOptionPane.showMessageDialog(null, " CONTADOR" +  i);
                 fila = (String[]) ListadoEquiposRecibe.get(i);
@@ -193,8 +195,18 @@ public class HomeListado extends javax.swing.JFrame {
                 
                 //filastring = Arrays.toString(fila);
                 //System.out.println("The Length of ListadoEquiposRecibe-ArrayList is 2 : " + Arrays.toString(fila));
-        }*/
-        //tblListadoEquipos.setModel(tabla);
+        }
+        
+        for(int i=0;i<list.size();i++){
+        modelotabla.addRow(new Object[] {list.get(i).getName1(), list.get(i).getCedula(), list.get(i).getAddress(), list.get(i).getGender(), list.get(i).getHobbies()});
+        }
+        */
+        
+        for(i=0;i<ListadoEquiposRecibe.size();i++)
+        {
+            tabla.addRow(new Object[] {ListadoEquiposRecibe.get(i)});
+        }
+        tblListadoEquipos.setModel(tabla);
         
         
     }
