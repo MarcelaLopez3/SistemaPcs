@@ -177,6 +177,7 @@ public class HomeListado extends javax.swing.JFrame {
         Integer count = ListadoEquiposRecibe.size();
         System.out.println("The Length of ListadoEquiposRecibe-ArrayList is : " + count);
         
+        //cambio de mostrando local a remoto
         String []fila = null;
 
         Integer i;
